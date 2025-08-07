@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deep Ignorance: Filtering Pretraining Data Builds Tamper-Resistant Safeguards into Open-Weight LLMs</title>
-    
+
     <!-- SEO Meta Description -->
-    <meta name="description" content="Training data filtering makes LLMs resistant to adversarial fine-tuning without sacrificing general performance. Research from EleutherAI, UK AISI, and University of Oxford.">
+    <meta name="description" content="Filtering pretraining data prevents dangerous capabilities, doesn’t sacrifice general performance, and results in models that are resistant to tampering.">
     <meta name="keywords" content="LLM safety, AI safety, machine learning, data filtering, adversarial fine-tuning, open-weight models, tamper-resistant safeguards, pretraining data, EleutherAI, UK AISI, University of Oxford, deep learning, model security, CBRN defense">
     <meta name="author" content="Kyle O'Brien, Stephen Casper, Quentin Anthony, Tomek Korbak, Robert Kirk, Xander Davies, Ishan Mishra, Geoffrey Irving, Yarin Gal, Stella Biderman">
     <link rel="canonical" href="https://deepignorance.ai">
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Deep Ignorance: Filtering Pretraining Data Builds Tamper-Resistant Safeguards">
-    <meta property="og:description" content="Training data filtering makes LLMs resistant to adversarial fine-tuning without sacrificing general performance. Research from EleutherAI, UK AISI, and University of Oxford.">
+    <meta property="og:description" content="Filtering pretraining data prevents dangerous capabilities, doesn’t sacrifice general performance, and results in models that are resistant to tampering.">
     <meta property="og:image" content="https://deepignorance.ai/images/results.png">
     <meta property="og:url" content="https://deepignorance.ai">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Deep Ignorance">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Deep Ignorance: Filtering Pretraining Data Builds Tamper-Resistant Safeguards">
-    <meta name="twitter:description" content="Training data filtering makes LLMs resistant to adversarial fine-tuning without sacrificing general performance. Research from EleutherAI, UK AISI, and University of Oxford.">
+    <meta name="twitter:description" content="Filtering pretraining data prevents dangerous capabilities, doesn’t sacrifice general performance, and results in models that are resistant to tampering.">
     <meta name="twitter:image" content="https://deepignorance.ai/images/results.png">
-    
+
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,7 @@
         <header>
             <h1>Deep Ignorance</h1>
             <p class="subtitle">Filtering Pretraining Data Builds Tamper-Resistant<br>Safeguards into Open-Weight LLMs</p>
-            
+
             <nav>
                 <a href="#" class="nav-link" target="_blank">
                     <img src="images/paper-icon.png" alt="Deep Ignorance research paper icon" class="paper-icon">
@@ -55,7 +55,7 @@
                     <strong>GitHub</strong>
                 </a>
             </nav>
-            
+
             <div class="authors">
                 <div class="author-row">
                     <span class="author">Kyle O'Brien<sup>1*</sup></span>
@@ -96,7 +96,7 @@
         <main>
             <section id="introduction">
                 <h2>Introduction</h2>
-                
+
                 <p>
                     A risk as LLMs grow more capable is that they learn unsafe knowledge during training. These dangerous capabilities could be exploited by bad actors. Today's safeguards' primary focus is on suppressing unsafe knowledge in post-training, often via refusal training.
                 </p>
@@ -114,7 +114,7 @@
                 <p>
                     <strong>Taken together, these results suggest that rigorous pretraining data filtering is a promising method for preventing acquisition of dangerous technical capabilities without obvious degradation in overall model utility.</strong> Our efficient data approach allowed us to perform filtering with less than a 1% increase in training compute (FLOPS). We release our models, optimizer states, and intermediate checkpoints to enable future research into domains including data-driven AI security, pretraining research, machine unlearning, and mechanistic interpretability. We are especially excited to see future work that addresses our limitations, such as studying the filtering of other types of knowledge and developing scaling trends. See our paper for more details, discussion, and sketches of future work.
                 </p>
-                
+
                 <div class="figure">
                     <img src="images/filtering_method.png" alt="Diagram of multi-stage data filtering pipeline: blocklist filtering followed by classifier evaluation for biothreat content removal" class="responsive-img">
                     <p class="caption"><strong>Figure 2: Our multi-stage data filtering pipeline: Our goal is to filter out data related to unwanted topics.</strong> We study biothreat-proxy knowledge as a representative example. All documents undergo initial "blocklist" filtering, where those without prohibited terms are retained without further review. Documents containing blocked terms (e.g., "pathogen(s)") are escalated to a fine-tuned text classifier that evaluates semantic content. The classifier assigns probability scores for unsafe content: documents scoring below the predetermined threshold are retained, while those exceeding it are excluded from the training corpus. In practice, the vast majority of documents are approved by the blocklist and thus do not require review by the classifier stage.</p>
@@ -126,7 +126,7 @@
                 <p>
                     All models and datasets are available on our <a href="https://huggingface.co/collections/EleutherAI/deep-ignorance-685441040d024a0fee593d68" target="_blank">HuggingFace collection</a>. These artifacts enable future research in data-driven AI security, pretraining methodologies, machine unlearning, and mechanistic interpretability. By releasing models with varying levels of filtering and post-training safeguards, we provide researchers with a comprehensive testbed for studying the causal impact of training data on model behavior and safety.
                 </p>
-                
+
                 <div class="table-container">
                     <table class="artifacts-table">
                         <thead>
@@ -153,7 +153,7 @@
                                 <td>None</td>
                                 <td>None</td>
                             </tr>
-                            
+
                             <tr class="section-header">
                                 <td colspan="4"><strong>Core Filtered Models</strong></td>
                             </tr>
@@ -175,7 +175,7 @@
                                 <td>Blocklist + ModernBERT (relaxed)</td>
                                 <td>Data filtering</td>
                             </tr>
-                            
+
                             <tr class="section-header">
                                 <td colspan="4"><strong>Hybrid Filtering Models</strong></td>
                             </tr>
@@ -191,7 +191,7 @@
                                 <td>Weak pretraining, strong annealing</td>
                                 <td>Data filtering</td>
                             </tr>
-                            
+
                             <tr class="section-header">
                                 <td colspan="4"><strong>Circuit Breaking (CB) Variants</strong></td>
                             </tr>
@@ -213,7 +213,7 @@
                                 <td>Strong PT, weak anneal</td>
                                 <td>Data filtering + CB</td>
                             </tr>
-                            
+
                             <tr class="section-header">
                                 <td colspan="4"><strong>CB + Latent Adversarial Training (LAT) Variants</strong></td>
                             </tr>
@@ -235,7 +235,7 @@
                                 <td>Strong PT, weak anneal</td>
                                 <td>Maximum defense</td>
                             </tr>
-                            
+
                             <tr class="section-header">
                                 <td colspan="4"><strong>Knowledge Corruption Variants</strong></td>
                             </tr>
@@ -254,13 +254,13 @@
                         </tbody>
                     </table>
                 </div>
-                
+
             </section>
 
             <section id="citation">
                 <h2>Citation</h2>
                 <p>If you use this work in your research, please cite:</p>
-                
+
                 <div class="citation-box">
                     <pre><code>TBD</code></pre>
                 </div>
