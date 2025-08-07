@@ -402,6 +402,8 @@ footer {
 .footer-logo {
     height: 60px;
     width: auto;
+    max-width: 200px;
+    object-fit: contain;
     border-radius: 8px;
 }
 
