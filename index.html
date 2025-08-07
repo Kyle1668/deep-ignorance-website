@@ -7,6 +7,9 @@
     
     <!-- SEO Meta Description -->
     <meta name="description" content="Training data filtering makes LLMs resistant to adversarial fine-tuning without sacrificing general performance. Research from EleutherAI, UK AISI, and University of Oxford.">
+    <meta name="keywords" content="LLM safety, AI safety, machine learning, data filtering, adversarial fine-tuning, open-weight models, tamper-resistant safeguards, pretraining data, EleutherAI, UK AISI, University of Oxford, deep learning, model security, CBRN defense">
+    <meta name="author" content="Kyle O'Brien, Stephen Casper, Quentin Anthony, Tomek Korbak, Robert Kirk, Xander Davies, Ishan Mishra, Geoffrey Irving, Yarin Gal, Stella Biderman">
+    <link rel="canonical" href="https://deepignorance.ai">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Deep Ignorance: Filtering Pretraining Data Builds Tamper-Resistant Safeguards">
@@ -36,12 +39,12 @@
             
             <nav>
                 <a href="#" class="nav-link" target="_blank">
-                    <img src="images/paper-icon.png" alt="Paper" class="paper-icon">
+                    <img src="images/paper-icon.png" alt="Deep Ignorance research paper icon" class="paper-icon">
                     <strong>Paper</strong>
                 </a>
                 <span class="nav-separator">|</span>
                 <a href="https://huggingface.co/collections/EleutherAI/deep-ignorance-685441040d024a0fee593d68" class="nav-link" target="_blank">
-                    <img src="images/hf-logo.svg" alt="Hugging Face" class="hf-logo">
+                    <img src="images/hf-logo.svg" alt="Hugging Face logo - Access Deep Ignorance models and datasets" class="hf-logo">
                     <strong>Hugging Face</strong>
                 </a>
                 <span class="nav-separator">|</span>
@@ -79,7 +82,7 @@
         </header>
 
         <div class="figure">
-            <img src="images/results.png" alt="Results" class="responsive-img">
+            <img src="images/results.png" alt="Graph showing LLM performance: filtered models maintain general capabilities while resisting adversarial fine-tuning on biothreat knowledge" class="responsive-img">
             <p class="caption"><strong>Figure 1: Training data filtering makes LLMs resistant to adversarial fine-tuning without sacrificing general performance.</strong> Models whose training data has been filtered to remove text related to dual-use biology topics (left) have unaffected general capabilities and (right) have low biothreat proxy capabilities and resist up to 10,000 steps and 300M tokens of adversarial fine-tuning.</p>
         </div>
 
@@ -113,7 +116,7 @@
                 </p>
                 
                 <div class="figure">
-                    <img src="images/filtering_method.png" alt="Filtering Method" class="responsive-img">
+                    <img src="images/filtering_method.png" alt="Diagram of multi-stage data filtering pipeline: blocklist filtering followed by classifier evaluation for biothreat content removal" class="responsive-img">
                     <p class="caption"><strong>Figure 2: Our multi-stage data filtering pipeline: Our goal is to filter out data related to unwanted topics.</strong> We study biothreat-proxy knowledge as a representative example. All documents undergo initial "blocklist" filtering, where those without prohibited terms are retained without further review. Documents containing blocked terms (e.g., "pathogen(s)") are escalated to a fine-tuned text classifier that evaluates semantic content. The classifier assigns probability scores for unsafe content: documents scoring below the predetermined threshold are retained, while those exceeding it are excluded from the training corpus. In practice, the vast majority of documents are approved by the blocklist and thus do not require review by the classifier stage.</p>
                 </div>
             </section>
