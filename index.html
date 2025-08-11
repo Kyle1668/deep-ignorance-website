@@ -83,7 +83,7 @@
 
         <div class="figure">
             <img src="images/results.png" alt="Graph showing LLM performance: filtered models maintain general capabilities while resisting adversarial fine-tuning on biothreat knowledge" class="responsive-img">
-            <p class="caption"><strong>Figure 1: Training data filtering makes LLMs resistant to adversarial fine-tuning without sacrificing general performance.</strong> Models whose training data has been filtered to remove text related to dual-use biology topics (left) have unaffected general capabilities and (right) have low biothreat proxy capabilities and resist up to 10,000 steps and 300M tokens of adversarial fine-tuning.</p>
+            <p class="caption"><strong>Training data filtering makes LLMs resistant to adversarial fine-tuning without sacrificing general performance.</strong> Models whose training data has been filtered to remove text related to dual-use biology topics (left) have unaffected general capabilities and (right) have low biothreat proxy capabilities and resist up to 10,000 steps and 300M tokens of adversarial fine-tuning.</p>
         </div>
 
         <div class="quote-block">
@@ -98,7 +98,7 @@
                 <h2>Introduction</h2>
 
                 <p>
-                    A risk as LLMs grow more capable is that they learn unsafe knowledge during training. These dangerous capabilities could be exploited by bad actors. Today's safeguards' primary focus is on suppressing unsafe knowledge in post-training, often via refusal training.
+                    A risk as LLMs grow more capable is that they learn unsafe knowledge during training. These dangerous capabilities could be exploited by bad actors. Today's safeguards focus on suppressing unsafe knowledge in post-training, often via refusal training. The unsafe knowledge remains in the model's weights.
                 </p>
                 <p>
                     Open-weight models, those that users can download and modify locally, offer unique benefits related to transparency, research, and the deconcentration of power. However, they are vulnerable to "tampering attacks" that can remove their safety training. For instance, it is straightforward to train open-weight models never to refuse unsafe requests. This is of increasing concern as open-weight models begin to rival the capabilities of the best closed-weight models.
@@ -117,7 +117,7 @@
 
                 <div class="figure">
                     <img src="images/filtering_method.png" alt="Diagram of multi-stage data filtering pipeline: blocklist filtering followed by classifier evaluation for biothreat content removal" class="responsive-img">
-                    <p class="caption"><strong>Figure 2: Our multi-stage data filtering pipeline: Our goal is to filter out data related to unwanted topics.</strong> We study biothreat-proxy knowledge as a representative example. All documents undergo initial "blocklist" filtering, where those without prohibited terms are retained without further review. Documents containing blocked terms (e.g., "pathogen(s)") are escalated to a fine-tuned text classifier that evaluates semantic content. The classifier assigns probability scores for unsafe content: documents scoring below the predetermined threshold are retained, while those exceeding it are excluded from the training corpus. In practice, the vast majority of documents are approved by the blocklist and thus do not require review by the classifier stage.</p>
+                    <p class="caption"><strong>Our multi-stage data filtering pipeline: Our goal is to filter out data related to unwanted topics.</strong> We study biothreat-proxy knowledge as a representative example. All documents undergo initial "blocklist" filtering, where those without prohibited terms are retained without further review. Documents containing blocked terms (e.g., "pathogen(s)") are escalated to a fine-tuned text classifier that evaluates semantic content. The classifier assigns probability scores for unsafe content: documents scoring below the predetermined threshold are retained, while those exceeding it are excluded from the training corpus. In practice, the vast majority of documents are approved by the blocklist and thus do not require review by the classifier stage.</p>
                 </div>
             </section>
 
