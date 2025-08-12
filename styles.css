@@ -359,6 +359,96 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
+/* Press Section */
+.press-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+a.press-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+a.press-item:hover {
+    background-color: #f0f0f0;
+    opacity: 1;
+}
+
+.press-logo {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.press-content {
+    flex: 1;
+    line-height: 1.5;
+}
+
+.press-content strong {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+/* Related Articles */
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.related-item {
+    display: block;
+    padding: 1.25rem;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.related-item:hover {
+    background-color: #f0f0f0;
+    border-color: var(--border-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.related-source {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.related-favicon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.related-title {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
 /* Citation Box */
 .citation-box {
     background: var(--light-gray);
@@ -424,6 +514,15 @@ footer a {
     .results-summary {
         flex-direction: column;
         gap: 1.5rem;
+    }
+    
+    a.press-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .press-logo {
+        width: 120px;
     }
 }
 
