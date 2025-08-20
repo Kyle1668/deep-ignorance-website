@@ -392,7 +392,8 @@ a.press-item:hover {
 }
 
 .press-content {
-    flex: 1;
+    flex: 0 1 auto;
+    max-width: 550px;
     line-height: 1.5;
 }
 
@@ -493,34 +494,34 @@ footer a {
     h1 {
         font-size: 2.5rem;
     }
-    
+
     .subtitle {
         font-size: 1rem;
     }
-    
+
     nav {
         gap: 1.5rem;
     }
-    
+
     h2 {
         font-size: 1.3rem;
     }
-    
+
     .method-grid,
     .model-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .results-summary {
         flex-direction: column;
         gap: 1.5rem;
     }
-    
+
     a.press-item {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .press-logo {
         width: 120px;
     }
@@ -530,15 +531,15 @@ footer a {
     .container {
         padding: 1.5rem 1rem;
     }
-    
+
     h1 {
         font-size: 2rem;
     }
-    
+
     nav {
         gap: 1rem;
     }
-    
+
     .nav-link {
         font-size: 0.9rem;
     }
@@ -550,20 +551,20 @@ footer a {
         font-size: 12pt;
         line-height: 1.5;
     }
-    
+
     .container {
         max-width: 100%;
     }
-    
+
     nav, footer {
         display: none;
     }
-    
+
     a {
         color: var(--text-color);
         text-decoration: none;
     }
-    
+
     .stat-card {
         break-inside: avoid;
     }
